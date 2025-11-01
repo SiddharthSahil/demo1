@@ -1,0 +1,889 @@
+{
+  "template_id": "template1_Paste-Production-Base-Sheet",
+  "width": 3509,
+  "height": 2481,
+  "rois": [
+    {
+      "field": "product",
+      "x": 438,
+      "y": 278,
+      "w": 713,
+      "h": 140
+    },
+    {
+      "field": "sku",
+      "x": 1246,
+      "y": 278,
+      "w": 851,
+      "h": 124
+    },
+    {
+      "field": "batch_no",
+      "x": 2288,
+      "y": 283,
+      "w": 917,
+      "h": 124
+    },
+    {
+      "field": "incharge_sign",
+      "x": 667,
+      "y": 1896,
+      "w": 493,
+      "h": 168
+    },
+    {
+      "field": "posting_done_by",
+      "x": 2638,
+      "y": 1899,
+      "w": 562,
+      "h": 159
+    },
+    {
+      "field": "line_no__tube",
+      "x": 275,
+      "y": 672,
+      "w": 193,
+      "h": 3
+    },
+    {
+      "field": "previous_batch_balance_qty__tube",
+      "x": 468,
+      "y": 672,
+      "w": 3,
+      "h": 3
+    },
+    {
+      "field": "total_received_qty_after_mrn__tube",
+      "x": 471,
+      "y": 672,
+      "w": 196,
+      "h": 3
+    },
+    {
+      "field": "packed_qty_fg__tube",
+      "x": 667,
+      "y": 672,
+      "w": 0,
+      "h": 3
+    },
+    {
+      "field": "loose_fg_qty__tube",
+      "x": 667,
+      "y": 672,
+      "w": 198,
+      "h": 3
+    },
+    {
+      "field": "sample__tube",
+      "x": 865,
+      "y": 672,
+      "w": 3,
+      "h": 3
+    },
+    {
+      "field": "rejection__tube",
+      "x": 868,
+      "y": 672,
+      "w": 287,
+      "h": 3
+    },
+    {
+      "field": "difference__tube",
+      "x": 1155,
+      "y": 672,
+      "w": 2,
+      "h": 3
+    },
+    {
+      "field": "remark__tube",
+      "x": 1157,
+      "y": 672,
+      "w": 243,
+      "h": 3
+    },
+    {
+      "field": "supervis_1__tube",
+      "x": 1400,
+      "y": 672,
+      "w": 5,
+      "h": 3
+    },
+    {
+      "field": "supervis_2__tube",
+      "x": 1405,
+      "y": 672,
+      "w": 166,
+      "h": 3
+    },
+    {
+      "field": "line_no__carton",
+      "x": 275,
+      "y": 675,
+      "w": 193,
+      "h": 151
+    },
+    {
+      "field": "previous_batch_balance_qty__carton",
+      "x": 468,
+      "y": 675,
+      "w": 3,
+      "h": 151
+    },
+    {
+      "field": "total_received_qty_after_mrn__carton",
+      "x": 471,
+      "y": 675,
+      "w": 196,
+      "h": 151
+    },
+    {
+      "field": "packed_qty_fg__carton",
+      "x": 667,
+      "y": 675,
+      "w": 0,
+      "h": 151
+    },
+    {
+      "field": "loose_fg_qty__carton",
+      "x": 667,
+      "y": 675,
+      "w": 198,
+      "h": 151
+    },
+    {
+      "field": "sample__carton",
+      "x": 865,
+      "y": 675,
+      "w": 3,
+      "h": 151
+    },
+    {
+      "field": "rejection__carton",
+      "x": 868,
+      "y": 675,
+      "w": 287,
+      "h": 151
+    },
+    {
+      "field": "difference__carton",
+      "x": 1155,
+      "y": 675,
+      "w": 2,
+      "h": 151
+    },
+    {
+      "field": "remark__carton",
+      "x": 1157,
+      "y": 675,
+      "w": 243,
+      "h": 151
+    },
+    {
+      "field": "supervis_1__carton",
+      "x": 1400,
+      "y": 675,
+      "w": 5,
+      "h": 151
+    },
+    {
+      "field": "supervis_2__carton",
+      "x": 1405,
+      "y": 675,
+      "w": 166,
+      "h": 151
+    },
+    {
+      "field": "line_no__sleeve",
+      "x": 275,
+      "y": 826,
+      "w": 193,
+      "h": 12
+    },
+    {
+      "field": "previous_batch_balance_qty__sleeve",
+      "x": 468,
+      "y": 826,
+      "w": 3,
+      "h": 12
+    },
+    {
+      "field": "total_received_qty_after_mrn__sleeve",
+      "x": 471,
+      "y": 826,
+      "w": 196,
+      "h": 12
+    },
+    {
+      "field": "packed_qty_fg__sleeve",
+      "x": 667,
+      "y": 826,
+      "w": 0,
+      "h": 12
+    },
+    {
+      "field": "loose_fg_qty__sleeve",
+      "x": 667,
+      "y": 826,
+      "w": 198,
+      "h": 12
+    },
+    {
+      "field": "sample__sleeve",
+      "x": 865,
+      "y": 826,
+      "w": 3,
+      "h": 12
+    },
+    {
+      "field": "rejection__sleeve",
+      "x": 868,
+      "y": 826,
+      "w": 287,
+      "h": 12
+    },
+    {
+      "field": "difference__sleeve",
+      "x": 1155,
+      "y": 826,
+      "w": 2,
+      "h": 12
+    },
+    {
+      "field": "remark__sleeve",
+      "x": 1157,
+      "y": 826,
+      "w": 243,
+      "h": 12
+    },
+    {
+      "field": "supervis_1__sleeve",
+      "x": 1400,
+      "y": 826,
+      "w": 5,
+      "h": 12
+    },
+    {
+      "field": "supervis_2__sleeve",
+      "x": 1405,
+      "y": 826,
+      "w": 166,
+      "h": 12
+    },
+    {
+      "field": "line_no__cld",
+      "x": 275,
+      "y": 838,
+      "w": 193,
+      "h": 154
+    },
+    {
+      "field": "previous_batch_balance_qty__cld",
+      "x": 468,
+      "y": 838,
+      "w": 3,
+      "h": 154
+    },
+    {
+      "field": "total_received_qty_after_mrn__cld",
+      "x": 471,
+      "y": 838,
+      "w": 196,
+      "h": 154
+    },
+    {
+      "field": "packed_qty_fg__cld",
+      "x": 667,
+      "y": 838,
+      "w": 0,
+      "h": 154
+    },
+    {
+      "field": "loose_fg_qty__cld",
+      "x": 667,
+      "y": 838,
+      "w": 198,
+      "h": 154
+    },
+    {
+      "field": "sample__cld",
+      "x": 865,
+      "y": 838,
+      "w": 3,
+      "h": 154
+    },
+    {
+      "field": "rejection__cld",
+      "x": 868,
+      "y": 838,
+      "w": 287,
+      "h": 154
+    },
+    {
+      "field": "difference__cld",
+      "x": 1155,
+      "y": 838,
+      "w": 2,
+      "h": 154
+    },
+    {
+      "field": "remark__cld",
+      "x": 1157,
+      "y": 838,
+      "w": 243,
+      "h": 154
+    },
+    {
+      "field": "supervis_1__cld",
+      "x": 1400,
+      "y": 838,
+      "w": 5,
+      "h": 154
+    },
+    {
+      "field": "supervis_2__cld",
+      "x": 1405,
+      "y": 838,
+      "w": 166,
+      "h": 154
+    },
+    {
+      "field": "line_no__hanger",
+      "x": 275,
+      "y": 992,
+      "w": 193,
+      "h": 0
+    },
+    {
+      "field": "previous_batch_balance_qty__hanger",
+      "x": 468,
+      "y": 992,
+      "w": 3,
+      "h": 0
+    },
+    {
+      "field": "total_received_qty_after_mrn__hanger",
+      "x": 471,
+      "y": 992,
+      "w": 196,
+      "h": 0
+    },
+    {
+      "field": "packed_qty_fg__hanger",
+      "x": 667,
+      "y": 992,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "field": "loose_fg_qty__hanger",
+      "x": 667,
+      "y": 992,
+      "w": 198,
+      "h": 0
+    },
+    {
+      "field": "sample__hanger",
+      "x": 865,
+      "y": 992,
+      "w": 3,
+      "h": 0
+    },
+    {
+      "field": "rejection__hanger",
+      "x": 868,
+      "y": 992,
+      "w": 287,
+      "h": 0
+    },
+    {
+      "field": "difference__hanger",
+      "x": 1155,
+      "y": 992,
+      "w": 2,
+      "h": 0
+    },
+    {
+      "field": "remark__hanger",
+      "x": 1157,
+      "y": 992,
+      "w": 243,
+      "h": 0
+    },
+    {
+      "field": "supervis_1__hanger",
+      "x": 1400,
+      "y": 992,
+      "w": 5,
+      "h": 0
+    },
+    {
+      "field": "supervis_2__hanger",
+      "x": 1405,
+      "y": 992,
+      "w": 166,
+      "h": 0
+    },
+    {
+      "field": "line_no__row6",
+      "x": 275,
+      "y": 992,
+      "w": 193,
+      "h": 154
+    },
+    {
+      "field": "previous_batch_balance_qty__row6",
+      "x": 468,
+      "y": 992,
+      "w": 3,
+      "h": 154
+    },
+    {
+      "field": "total_received_qty_after_mrn__row6",
+      "x": 471,
+      "y": 992,
+      "w": 196,
+      "h": 154
+    },
+    {
+      "field": "packed_qty_fg__row6",
+      "x": 667,
+      "y": 992,
+      "w": 0,
+      "h": 154
+    },
+    {
+      "field": "loose_fg_qty__row6",
+      "x": 667,
+      "y": 992,
+      "w": 198,
+      "h": 154
+    },
+    {
+      "field": "sample__row6",
+      "x": 865,
+      "y": 992,
+      "w": 3,
+      "h": 154
+    },
+    {
+      "field": "rejection__row6",
+      "x": 868,
+      "y": 992,
+      "w": 287,
+      "h": 154
+    },
+    {
+      "field": "difference__row6",
+      "x": 1155,
+      "y": 992,
+      "w": 2,
+      "h": 154
+    },
+    {
+      "field": "remark__row6",
+      "x": 1157,
+      "y": 992,
+      "w": 243,
+      "h": 154
+    },
+    {
+      "field": "supervis_1__row6",
+      "x": 1400,
+      "y": 992,
+      "w": 5,
+      "h": 154
+    },
+    {
+      "field": "supervis_2__row6",
+      "x": 1405,
+      "y": 992,
+      "w": 166,
+      "h": 154
+    },
+    {
+      "field": "line_no__row7",
+      "x": 275,
+      "y": 1146,
+      "w": 193,
+      "h": 6
+    },
+    {
+      "field": "previous_batch_balance_qty__row7",
+      "x": 468,
+      "y": 1146,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "field": "total_received_qty_after_mrn__row7",
+      "x": 471,
+      "y": 1146,
+      "w": 196,
+      "h": 6
+    },
+    {
+      "field": "packed_qty_fg__row7",
+      "x": 667,
+      "y": 1146,
+      "w": 0,
+      "h": 6
+    },
+    {
+      "field": "loose_fg_qty__row7",
+      "x": 667,
+      "y": 1146,
+      "w": 198,
+      "h": 6
+    },
+    {
+      "field": "sample__row7",
+      "x": 865,
+      "y": 1146,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "field": "rejection__row7",
+      "x": 868,
+      "y": 1146,
+      "w": 287,
+      "h": 6
+    },
+    {
+      "field": "difference__row7",
+      "x": 1155,
+      "y": 1146,
+      "w": 2,
+      "h": 6
+    },
+    {
+      "field": "remark__row7",
+      "x": 1157,
+      "y": 1146,
+      "w": 243,
+      "h": 6
+    },
+    {
+      "field": "supervis_1__row7",
+      "x": 1400,
+      "y": 1146,
+      "w": 5,
+      "h": 6
+    },
+    {
+      "field": "supervis_2__row7",
+      "x": 1405,
+      "y": 1146,
+      "w": 166,
+      "h": 6
+    },
+    {
+      "field": "line_no__row8",
+      "x": 275,
+      "y": 1152,
+      "w": 193,
+      "h": 157
+    },
+    {
+      "field": "previous_batch_balance_qty__row8",
+      "x": 468,
+      "y": 1152,
+      "w": 3,
+      "h": 157
+    },
+    {
+      "field": "total_received_qty_after_mrn__row8",
+      "x": 471,
+      "y": 1152,
+      "w": 196,
+      "h": 157
+    },
+    {
+      "field": "packed_qty_fg__row8",
+      "x": 667,
+      "y": 1152,
+      "w": 0,
+      "h": 157
+    },
+    {
+      "field": "loose_fg_qty__row8",
+      "x": 667,
+      "y": 1152,
+      "w": 198,
+      "h": 157
+    },
+    {
+      "field": "sample__row8",
+      "x": 865,
+      "y": 1152,
+      "w": 3,
+      "h": 157
+    },
+    {
+      "field": "rejection__row8",
+      "x": 868,
+      "y": 1152,
+      "w": 287,
+      "h": 157
+    },
+    {
+      "field": "difference__row8",
+      "x": 1155,
+      "y": 1152,
+      "w": 2,
+      "h": 157
+    },
+    {
+      "field": "remark__row8",
+      "x": 1157,
+      "y": 1152,
+      "w": 243,
+      "h": 157
+    },
+    {
+      "field": "supervis_1__row8",
+      "x": 1400,
+      "y": 1152,
+      "w": 5,
+      "h": 157
+    },
+    {
+      "field": "supervis_2__row8",
+      "x": 1405,
+      "y": 1152,
+      "w": 166,
+      "h": 157
+    },
+    {
+      "field": "line_no__row9",
+      "x": 275,
+      "y": 1309,
+      "w": 193,
+      "h": 0
+    },
+    {
+      "field": "previous_batch_balance_qty__row9",
+      "x": 468,
+      "y": 1309,
+      "w": 3,
+      "h": 0
+    },
+    {
+      "field": "total_received_qty_after_mrn__row9",
+      "x": 471,
+      "y": 1309,
+      "w": 196,
+      "h": 0
+    },
+    {
+      "field": "packed_qty_fg__row9",
+      "x": 667,
+      "y": 1309,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "field": "loose_fg_qty__row9",
+      "x": 667,
+      "y": 1309,
+      "w": 198,
+      "h": 0
+    },
+    {
+      "field": "sample__row9",
+      "x": 865,
+      "y": 1309,
+      "w": 3,
+      "h": 0
+    },
+    {
+      "field": "rejection__row9",
+      "x": 868,
+      "y": 1309,
+      "w": 287,
+      "h": 0
+    },
+    {
+      "field": "difference__row9",
+      "x": 1155,
+      "y": 1309,
+      "w": 2,
+      "h": 0
+    },
+    {
+      "field": "remark__row9",
+      "x": 1157,
+      "y": 1309,
+      "w": 243,
+      "h": 0
+    },
+    {
+      "field": "supervis_1__row9",
+      "x": 1400,
+      "y": 1309,
+      "w": 5,
+      "h": 0
+    },
+    {
+      "field": "supervis_2__row9",
+      "x": 1405,
+      "y": 1309,
+      "w": 166,
+      "h": 0
+    },
+    {
+      "field": "line_no__row10",
+      "x": 275,
+      "y": 1309,
+      "w": 193,
+      "h": 157
+    },
+    {
+      "field": "previous_batch_balance_qty__row10",
+      "x": 468,
+      "y": 1309,
+      "w": 3,
+      "h": 157
+    },
+    {
+      "field": "total_received_qty_after_mrn__row10",
+      "x": 471,
+      "y": 1309,
+      "w": 196,
+      "h": 157
+    },
+    {
+      "field": "packed_qty_fg__row10",
+      "x": 667,
+      "y": 1309,
+      "w": 0,
+      "h": 157
+    },
+    {
+      "field": "loose_fg_qty__row10",
+      "x": 667,
+      "y": 1309,
+      "w": 198,
+      "h": 157
+    },
+    {
+      "field": "sample__row10",
+      "x": 865,
+      "y": 1309,
+      "w": 3,
+      "h": 157
+    },
+    {
+      "field": "rejection__row10",
+      "x": 868,
+      "y": 1309,
+      "w": 287,
+      "h": 157
+    },
+    {
+      "field": "difference__row10",
+      "x": 1155,
+      "y": 1309,
+      "w": 2,
+      "h": 157
+    },
+    {
+      "field": "remark__row10",
+      "x": 1157,
+      "y": 1309,
+      "w": 243,
+      "h": 157
+    },
+    {
+      "field": "supervis_1__row10",
+      "x": 1400,
+      "y": 1309,
+      "w": 5,
+      "h": 157
+    },
+    {
+      "field": "supervis_2__row10",
+      "x": 1405,
+      "y": 1309,
+      "w": 166,
+      "h": 157
+    },
+    {
+      "field": "line_no__row11",
+      "x": 275,
+      "y": 1466,
+      "w": 193,
+      "h": 6
+    },
+    {
+      "field": "previous_batch_balance_qty__row11",
+      "x": 468,
+      "y": 1466,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "field": "total_received_qty_after_mrn__row11",
+      "x": 471,
+      "y": 1466,
+      "w": 196,
+      "h": 6
+    },
+    {
+      "field": "packed_qty_fg__row11",
+      "x": 667,
+      "y": 1466,
+      "w": 0,
+      "h": 6
+    },
+    {
+      "field": "loose_fg_qty__row11",
+      "x": 667,
+      "y": 1466,
+      "w": 198,
+      "h": 6
+    },
+    {
+      "field": "sample__row11",
+      "x": 865,
+      "y": 1466,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "field": "rejection__row11",
+      "x": 868,
+      "y": 1466,
+      "w": 287,
+      "h": 6
+    },
+    {
+      "field": "difference__row11",
+      "x": 1155,
+      "y": 1466,
+      "w": 2,
+      "h": 6
+    },
+    {
+      "field": "remark__row11",
+      "x": 1157,
+      "y": 1466,
+      "w": 243,
+      "h": 6
+    },
+    {
+      "field": "supervis_1__row11",
+      "x": 1400,
+      "y": 1466,
+      "w": 5,
+      "h": 6
+    },
+    {
+      "field": "supervis_2__row11",
+      "x": 1405,
+      "y": 1466,
+      "w": 166,
+      "h": 6
+    }
+  ]
+}
