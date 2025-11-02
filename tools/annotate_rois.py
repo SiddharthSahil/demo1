@@ -6,6 +6,10 @@ TEMPLATE_ID = "template1_Paste-Production-Base-Sheet"
 IMG_PATH = os.path.join("templates", "template1_Paste-Production-Base-Sheet.png")  # put your file here
 OUT_JSON = os.path.join("outputs", f"{TEMPLATE_ID}.json")
 
+EXPECTED_VLINES = len(TABLE_COLS) + 1            # e.g., 12 cols ⇒ 13 lines
+EXPECTED_HLINES = len(TABLE_ROWS) + 1            # e.g., 5 rows ⇒ 6 lines
+
+
 # Image size fit
 MAX_DISPLAY_W = 1400   # fit-to-screen width
 MAX_DISPLAY_H = 900    # fit-to-screen height
@@ -82,55 +86,60 @@ def _mouse_cb(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         _CLICKED.append((x, y))
 
-def collect_gridlines(img, axis="vertical", count_needed=None):
+def collect_gridlines(img, axis="vertical", exact_needed=None):
     """
-    axis='vertical'  -> collect X positions of vertical grid lines (left to right), incl. outer borders
-    axis='horizontal'-> collect Y positions of horizontal lines (top to bottom) for data rows incl. outer borders
+    axis='vertical'  -> collect X positions of ALL vertical grid lines, LEFT→RIGHT (include outer borders)
+    axis='horizontal'-> collect Y positions of ALL row borders, TOP→BOTTOM (include top of row1 & bottom of last)
+    Controls:
+      ENTER = finish,  C = clear last,  R = reset all,  ESC = abort
     """
     global _CLICKED
+    MAX_DISPLAY_W, MAX_DISPLAY_H = 1400, 900
     H, W = img.shape[:2]
-    sx = min(MAX_DISPLAY_W / W, 1.0)
-    sy = min(MAX_DISPLAY_H / H, 1.0)
-    s = min(sx, sy)
-    disp = cv2.resize(img, (int(W * s), int(H * s))) if s < 1.0 else img
+    s = min(MAX_DISPLAY_W / W, MAX_DISPLAY_H / H, 1.0)
+    disp = cv2.resize(img, (int(W*s), int(H*s))) if s < 1.0 else img
 
     _CLICKED = []
-    win = "Click grid lines"
-    msg = ("LEFT→RIGHT click all VERTICAL gridlines (include outer borders). ENTER to finish."
-           if axis == "vertical"
-           else "TOP→BOTTOM click HORIZONTAL row borders (include top of row1 and bottom of last). ENTER to finish.")
-    print("\n==> " + msg)
-
+    win = f"Click {'VERTICAL' if axis=='vertical' else 'HORIZONTAL'} grid lines"
     cv2.namedWindow(win, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(win, disp.shape[1], disp.shape[0])
     cv2.setMouseCallback(win, _mouse_cb)
-    # show a copy so clicks paint dots without distorting scaling
-    screen = disp.copy()
+
     while True:
-        # paint already clicked points
+        screen = disp.copy()
+        # draw dots + counter
         for (cx, cy) in _CLICKED:
             cv2.circle(screen, (cx, cy), 4, (0, 255, 0), -1)
+        msg = f"Clicks: {len(_CLICKED)}/{exact_needed if exact_needed else '?'}  (ENTER=done, C=undo, R=reset, ESC=quit)"
+        cv2.putText(screen, msg, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255), 2, cv2.LINE_AA)
         cv2.imshow(win, screen)
-        key = cv2.waitKey(20) & 0xFF
-        if key in (13, 10):   # ENTER
-            break
-        if key == 27:         # ESC
-            cv2.destroyAllWindows(); sys.exit(0)
-        screen = disp.copy()
-    cv2.destroyAllWindows()
 
-    if not _CLICKED:
-        print("No clicks captured."); sys.exit(1)
+        k = cv2.waitKey(20) & 0xFF
+        if k in (27, ):   # ESC
+            cv2.destroyAllWindows(); sys.exit(0)
+        if k in (ord('c'), ord('C')) and _CLICKED:
+            _CLICKED.pop()
+        if k in (ord('r'), ord('R')):
+            _CLICKED.clear()
+        if k in (13, 10):  # ENTER
+            if exact_needed and len(_CLICKED) != exact_needed:
+                # flash warning
+                warn = screen.copy()
+                cv2.putText(warn, f"Need exactly {exact_needed} clicks; you have {len(_CLICKED)}",
+                            (10, 55), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255), 2, cv2.LINE_AA)
+                cv2.imshow(win, warn); cv2.waitKey(800)
+                continue
+            break
+
+    cv2.destroyAllWindows()
 
     inv = 1.0 / s
     if axis == "vertical":
         vals = sorted([int(cx * inv) for (cx, _) in _CLICKED])
     else:
         vals = sorted([int(cy * inv) for (_, cy) in _CLICKED])
-
-    if count_needed and len(vals) != count_needed:
-        print(f"WARNING: expected {count_needed} {axis} lines, got {len(vals)}; proceeding.")
     return vals
+
 
 
 def main():
@@ -146,9 +155,12 @@ def main():
 
     # 2) grid lines for table
     # verticals: you should click ALL vertical lines for the table (left border first ... right border last).
-    x_lines = collect_gridlines(img, axis="vertical")
+    # verticals: must be N_cols + 1 (include left & right borders)
+    x_lines = collect_gridlines(img, axis="vertical", exact_needed=EXPECTED_VLINES)
     # horizontals: click TOP border of first data row ... BOTTOM border of last data row (so N_rows+1 clicks).
-    y_lines = collect_gridlines(img, axis="horizontal")
+    # horizontals: must be N_rows + 1
+    y_lines = collect_gridlines(img, axis="horizontal", exact_needed=EXPECTED_HLINES)
+    
     if len(y_lines) != len(TABLE_ROWS) + 1:
         print(f"NOTE: For {len(TABLE_ROWS)} rows you typically want {len(TABLE_ROWS)+1} horizontal clicks.")
 
