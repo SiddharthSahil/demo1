@@ -6,8 +6,6 @@ TEMPLATE_ID = "template1_Paste-Production-Base-Sheet"
 IMG_PATH = os.path.join("templates", "template1_Paste-Production-Base-Sheet.png")  # put your file here
 OUT_JSON = os.path.join("outputs", f"{TEMPLATE_ID}.json")
 
-EXPECTED_VLINES = len(TABLE_COLS) + 1            # e.g., 12 cols ⇒ 13 lines
-EXPECTED_HLINES = len(TABLE_ROWS) + 1            # e.g., 5 rows ⇒ 6 lines
 
 
 # Image size fit
@@ -40,6 +38,9 @@ TABLE_COLS = [
     "supervis_2",
 ]
 TABLE_ROWS = ["tube", "carton", "sleeve", "cld", "hanger"]  # data rows
+
+EXPECTED_VLINES = len(TABLE_COLS) + 1            # e.g., 12 cols ⇒ 13 lines
+EXPECTED_HLINES = len(TABLE_ROWS) + 1            # e.g., 5 rows ⇒ 6 lines
 
 # whether to include the leftmost printed labels column ("material") as an ROI
 INCLUDE_MATERIAL_COLUMN = False

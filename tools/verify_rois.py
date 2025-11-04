@@ -20,7 +20,8 @@ def draw_all(img, rois, highlight_idx=None):
     vis = img.copy()
     for i, r in enumerate(rois):
         x,y,w,h = r["x"], r["y"], r["w"], r["h"]
-        color = (0, 255, 0) if i != highlight_idx else (0, 165, 255)  # orange highlight
+        # yellow for all, blue for highlighted ROI
+        color = (0, 255, 255) if i != highlight_idx else (255, 0, 0)
         thickness = 2 if i != highlight_idx else 3
         cv2.rectangle(vis, (x, y), (x+w, y+h), color, thickness)
         # label background
@@ -97,7 +98,7 @@ def main():
     cv2.namedWindow(win, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(win, disp.shape[1], disp.shape[0])
 
-    idx = -1  # no highlight initially
+    idx = 0  # no highlight initially
     print("\nControls: ←/→ to highlight prev/next ROI, 'e' to export overlay, 'q' or ESC to quit.")
     while True:
         # re-render if a highlight is set
@@ -107,7 +108,8 @@ def main():
             vis = draw_all(img, rois, highlight_idx=None)
         disp, s = fit_for_display(vis)
         cv2.imshow(win, disp)
-        key = cv2.waitKey(50) & 0xFF
+        key = cv2.waitKey(0)
+        print("Key pressed:", key)
 
         if key in (27, ord('q')):   # ESC or q
             break
@@ -115,9 +117,11 @@ def main():
             ts = datetime.now().strftime("%Y%m%d_%H%M%S")
             out_path = os.path.join("outputs", f"{cfg.get('template_id','template')}_overlay_{ts}.png")
             save_overlay(vis, out_path)
-        if key == 81:  # left arrow
+        
+        # handle arrow keys (Windows / Linux both)
+        if key in (ord('a'), ord('A')):   # previous ROI
             idx = (idx - 1) % len(rois)
-        if key == 83:  # right arrow
+        if key in (ord('d'), ord('D')):   # next ROI
             idx = (idx + 1) % len(rois)
 
     cv2.destroyAllWindows()
